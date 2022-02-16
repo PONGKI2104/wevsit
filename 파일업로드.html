@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+.searchbox{
+  width: 90%;
+  margin: 10px auto;
+}
+.header{
+  background: #ECDFBF;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+.header h1{
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  margin-bottom: 8px;
+}
+#value{
+  border: none;
+  background: #E0D3B6;
+  padding: 6px;
+  font-size: 18px;
+  width: 80%;
+  border-radius: 6px;
+  color: white;
+}
+#value:focus{
+  outline: none;
+}
+.container{
+  background: #FFFFF5;
+  padding: 1%;
+}
+.item{
+  margin: 3% 0px;
+  display: flex;
+  align-items: center;
+}
+.icon{
+  width: 25px;
+  height: 25px;
+  background: #E0D3B6;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.name{
+  font-size: 17px;
+  font-weight: 470;
+  color: #333;
+}
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <body>
+    <div class="searchbox">
+       <div class="header">
+         <h1>지키백과</h1>
+         <input onkeyup="filter()" type="text" id="value" placeholder="찾고싶은 내용을 쓰십시오.">
+       </div>
+ 
+       <div class="container">
+ 
+         <div class="item">
+           <span class="icon">라면</span>
+           <span class="name"><H1>라면</H1><br>라면이 건강에 좋다.<br>라면은 비타민c등 다양한 비타민을 가지고 있다.<br>라면에 면이 노랑색인 이유도 있다.<br>비타민이 들어갔기 떄문이다.<br>그외에도 곡식물,버섯,채소가들어가있고<br>김치와 먹을시 건강은 배가된다.<br>이로서 라면이 건강에좋다는 이유이다.</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">치킨</span>
+           <span class="name"><H1>치킨</H1><br>치킨은 건강에 좋다.<br>왜냐하면 치킨은 건강에 좋은 고기 심지어<br>운동할떄먹고 단백질이 풍부한 닭가슴살<br>모든 것이 완벽하다. 양녕에는 물이<br>치킨에는 고기와 단백질이 <br>이로서 치킨이 건강에 좋다는것을 알수있다.</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">피자</span>
+           <span class="name"><h1>피자</h1><br>피자는 건강에 좋다.<br>그이유는 피자에는 야채,곡식,우유가 들어간다.<br>치즈는 우유가 야채는 토핑,곡식은 빵이다.<br>너무나도 간단한 재료가들어간다.<br>심지어 건강에좋은 토마토도 들어간다.<br>토마토도 마찬가지로 비타민C가있다.<br>이로서 피자가 건강에 좋은 것을 알수있다.</span>
+         </div>
+ 
+ 
+ 
+         <div class="item">
+           <span class="icon">상추</span>
+           <span class="name"><H1>상추</H1><br>상추는 건강에 좋지 않다고 한다.<br>물론 건강에도 좋은 면도 있지만<br>좋은점이 있으면 나쁜점이 있듯이 나쁜점이 있다.<br>우선 적색상추를 보자 적색상추는 적색을 가지고있고<br>굉장히 쓴맛을 가지고 있다.<br>야생에서 쓴맛은 자신을 먹지말라는 경고의 표시이기도 하다.<br>이경고의 대표적인 예는 독버섯이다.<br>독버섯은 독을 가지고있으며 먹었을 경우 심한경우 호흡곤란,구토<br>,사망에 이르게 할수있다. 상추도 마찬가지다.<br>이로서 상추를 먹으면 안된다는것이 증명 되었다.</span>
+         </div>
+ 
+         <div class="item">
+           <span class="icon">케일</span>
+           <span class="name"><H1>케일</H1><br>케일은 몸에 나쁘다.<br>그이유는 케일은 조선시대<br>유능한 의사 지환이 쓴 책<br><h3>'동'지'보감'<h5>에는 케일을 먹으면 너무 쓴탓에<br>혀의 감각이손실될수있다.<br>라고 써져있다. 이로서 케일은<br>건강에는 좋을지라도 혀의 감각에는 좋지않다.</h5></h3></span>
+         </div>
+       </div>
+     </div>
+     <script type="text/javascript">
+      function filter(){
+
+        var value, name, item, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        item = document.getElementsByClassName("item");
+
+        for(i=0;i<item.length;i++){
+          name = item[i].getElementsByClassName("name");
+          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            item[i].style.display = "flex";
+          }else{
+            item[i].style.display = "none";
+          }
+        }
+      }
+</script>
+ </body>
+</body>
+</html>
+<button type="button" onclick="location.href='index.html' ">메인홈페이지로 이동</button>
